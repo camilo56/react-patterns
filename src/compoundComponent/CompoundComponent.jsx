@@ -1,13 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
+import "./CompoundComponent.css"
 
 class CompoundComponent extends React.Component{
-
-    constructor(){
-        super();
+    static Option = props => <button onMouseDown={e => props.optionSelected(props)}>{props.children}</button> 
+    
+    state = {};
+    
+    showOptions = () => {
+        this.container.classList.add("showOptions")
+    }
+    
+    hideOptions = () => {
+        this.container.classList.remove("showOptions")
     }
 
+    toggleOptions = event => {
+        event.preventDefault();
+        event.stopPropagation();
+        this.container.classList.toggle("showOptions")
+    }
+    
+    optionSelected = ({value, children, onChange}) => {
+        if(!value){ value = children }
+        
+        this.setState({value}, () => onChange(this.state.value))
+    }
+    
     render(){
-        return <h1>Hi I'm CompoundComponent</h1>
+        let { defaultName = "Select", onChange } = this.props;
+        let { value = defaultName } = this.state;
+        
+        return <div className="compoundComponent" onBlur={this.hideOptions} onClick={this.showOptions} ref={div => this.container = div}>
+                    <button onClick={this.toggleOptions}>{value}</button>
+                    {React.Children.map(this.props.children, child => React.cloneElement(child, 
+                                                                                        {optionSelected: this.optionSelected, onChange}))}
+                </div>
     }
 }
 

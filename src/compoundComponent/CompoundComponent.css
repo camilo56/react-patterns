@@ -1,0 +1,43 @@
+.compoundComponent{
+    height: 26px;
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid #cccc;
+}
+
+.compoundComponent.showOptions {
+    height: auto;
+}
+
+.compoundComponent * {
+    display: block;
+}
+
+.compoundComponent > button {
+    width: 100%;
+    border: none;
+    padding: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    background: transparent;
+    text-overflow: ellipsis;
+    border-top: 1px solid #cac7c7; 
+}
+
+.compoundComponent > button:first-child {
+    border: none;
+    position: relative;
+}
+.compoundComponent > button:first-child::before {
+    top: 50%;
+    right: 10px;
+    content: "V";
+    position: absolute;
+    margin-top: -8px;
+}
+
+
