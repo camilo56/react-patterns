@@ -1,0 +1,38 @@
+.flexibleCompoundComponent{
+    outline: none;
+    overflow: auto;
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 300px;
+    max-height: 106px;
+    position: relative;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid #cccc;
+}
+
+.flexibleCompoundComponent * {
+    display: block;
+}
+
+.flexibleCompoundComponent > button{
+    width: 100%;
+    border: none;
+    padding: 5px;
+    outline: none;
+    overflow: hidden;
+    white-space: nowrap;
+    background: transparent;
+    text-overflow: ellipsis;
+    border-top: 1px solid #cac7c7; 
+}
+
+.flexibleCompoundComponent > button:first-child{
+    border: none;
+}
+
+.flexibleCompoundComponent > button.selected{
+    background: #bccef3;
+}
+
+

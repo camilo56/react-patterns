@@ -30,10 +30,12 @@ class CompoundComponent extends React.Component{
         let { defaultName = "Select", onChange } = this.props;
         let { value = defaultName } = this.state;
         
-        return <div className="compoundComponent" onBlur={this.hideOptions} onClick={this.showOptions} ref={div => this.container = div}>
+        return <div className="compoundComponent" onBlur={this.hideOptions} onClick={this.showOptions}>
                     <button onClick={this.toggleOptions}>{value}</button>
-                    {React.Children.map(this.props.children, child => React.cloneElement(child, 
-                                                                                        {optionSelected: this.optionSelected, onChange}))}
+                    <div className="contOptions" ref={div => this.container = div}>
+                        {React.Children.map(this.props.children, child => React.cloneElement(child, 
+                                                                                            {optionSelected: this.optionSelected, onChange}))}
+                    </div>
                 </div>
     }
 }
