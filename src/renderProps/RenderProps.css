@@ -1,0 +1,19 @@
+.renderProps{
+    outline: none;
+    overflow: auto;
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 300px;
+    position: relative;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid #cccc;
+}
+
+.renderProps img {
+    width: 100%;
+}
+
+.renderProps * {
+    text-align: center;
+}
