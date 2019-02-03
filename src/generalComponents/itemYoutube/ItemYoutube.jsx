@@ -6,7 +6,9 @@ class ItemYoutube extends React.Component{
     state = {};
     
     render(){
-        return <div className="ItemYoutube" onClick={() => this.props.onClick(this.props.src)}>{this.props.name}</div>
+        let {srcSelected, onClick, name, src} = this.props;
+
+        return <div className={srcSelected === src? "ItemYoutube selected": "ItemYoutube"} onClick={() => onClick(src)}>{name}</div>
     }
 }
 

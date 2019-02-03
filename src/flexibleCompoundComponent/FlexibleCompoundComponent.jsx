@@ -25,7 +25,7 @@ class FlexibleCompoundComponent extends React.Component{
     };
     
     render(){
-        return <div className="flexibleCompoundComponent" ref={div => this.firstItem = div}>
+        return <div className="flexibleCompoundComponent">
                     <OptionContext.Provider value={this.state}>
                         {this.props.children}
                     </OptionContext.Provider>

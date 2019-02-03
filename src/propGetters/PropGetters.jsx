@@ -4,7 +4,7 @@ import "./PropGetters.css"
 class PropGetters extends React.Component{
 
     state = {
-        srcSelected: null
+        srcSelected: undefined
     }
 
     getHelpers = () => {
@@ -19,7 +19,6 @@ class PropGetters extends React.Component{
     }
 
     render(){
-        console.log("render PropGetters", this.state)
         return <div className="propGetters" >
                     {this.props.children({ getHelpers: this.getHelpers})}
                 </div>

@@ -1,0 +1,8 @@
+.HigherOrderComponents{
+    margin: 0 auto;
+    font-size: 16px;
+    max-width: 300px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #cccc;
+}

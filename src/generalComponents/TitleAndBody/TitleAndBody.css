@@ -1,0 +1,33 @@
+.TitleAndBody{
+    width: 100%;
+    padding: 0px;
+    position: relative;
+    border-bottom: 1px solid #cccc;
+}
+
+.TitleAndBody:last-child{
+    border: none;
+}
+.TitleAndBody.open{
+    background: #bccef3;
+}
+
+.TitleAndBody h3{
+    cursor: pointer;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.TitleAndBody p{
+    margin: 0px;
+    height: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-sizing: border-box;
+    padding: 0px 4px 4px 4px;
+}
+
+.TitleAndBody.open h3{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cccc;
+}
