@@ -1,0 +1,53 @@
+.BasicSlider{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 1024px;
+    transition: all .2s;
+}
+
+.BasicSlider .imgContainer{
+    height: 0;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 56.25%;
+
+}
+
+.BasicSlider img{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transition: all .2s;
+}
+
+.BasicSlider img:not(.show){
+    filter: opacity(0%);
+}
+
+.BasicSlider img.show{
+    filter: opacity(100%);
+    position: relative;
+}
+
+.BasicSlider .dotsContainer{
+    display: flex;
+    align-content: center;
+    justify-content: center
+}
+
+.BasicSlider .dots{
+    width: 10px;
+    height: 10px;
+    margin: 0px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    background: #bccef3;
+}
+
+/* @keyframes show {
+    from {filter: opacity(100%);}
+    to {top: 200px;}
+  } */

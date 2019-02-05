@@ -9,6 +9,9 @@ import HigherOrderComponents from './higherOrderComponents/HigherOrderComponents
 import VideoYoutube from "./generalComponents/videoYoutube/VideoYoutube.jsx";
 import ItemYoutube from "./generalComponents/itemYoutube/ItemYoutube.jsx";
 import TitleAndBody from "./generalComponents/TitleAndBody/TitleAndBody.jsx";
+import BasicSlider from "./basicSlider/BasicSlider.jsx";
+import Image from "./generalComponents/image/Image";
+import Dots from "./generalComponents/dots/Dots";
 
 // import logo from './assets/logo.svg';
 // import './App.css';
@@ -28,6 +31,14 @@ class App extends Component {
             {id: "3", title: "Title 3", info: "Title 3 - info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat massa eget mauris placerat aliquet. Nullam rutrum justo sed facilisis interdum. Vestibulum ac dolor placerat ipsum iaculis lacinia. Vivamus in."},
             {id: "4", title: "Title 4", info: "Title 4 - info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat massa eget mauris placerat aliquet. Nullam rutrum justo sed facilisis interdum. Vestibulum ac dolor placerat ipsum iaculis lacinia. Vivamus in."},
             {id: "5", title: "Title 5", info: "Title 5 - info: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat massa eget mauris placerat aliquet. Nullam rutrum justo sed facilisis interdum. Vestibulum ac dolor placerat ipsum iaculis lacinia. Vivamus in."},
+        ],
+        imgGallery: [
+            "https://wallpapercave.com/wp/wp1891963.jpg",
+            "https://wallpapercave.com/wp/wp1891962.jpg",
+            "https://wallpapercave.com/wp/wp1891965.jpg",
+            "https://wallpapercave.com/wp/wp1891970.png",
+            "https://wallpapercave.com/wp/wp1891996.jpg",
+            "https://wallpapercave.com/wp/wp1891992.jpg"
         ]
     }
     render() {
@@ -38,6 +49,7 @@ class App extends Component {
             <header className="App-header">
             <h1>React Patterns</h1>
             </header>
+
              <h2>CompoundComponent</h2>
                     <CompoundComponent onChange={value => console.log("option Selected", value)}>
                         <CompoundComponent.Option value="01">1</CompoundComponent.Option>
@@ -81,6 +93,18 @@ class App extends Component {
                         </React.Fragment>
                     }
                 </PropGetters>
+                
+                <br/><hr/>
+                
+                <h2>BasicSlider</h2>
+                <BasicSlider imgs={this.state.imgGallery}>
+                    {({getHelpers, Images}) =>
+                        <React.Fragment>
+                            <Images Component={Image}/>
+                            <Dots {...getHelpers()}/>
+                        </React.Fragment>
+                    }
+                </BasicSlider>
                 
                 <br/><hr/>
 
