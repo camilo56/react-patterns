@@ -47,6 +47,10 @@
     background: #bccef3;
 }
 
+.BasicSlider .dots.selected{
+    background: #596887;
+}
+
 /* @keyframes show {
     from {filter: opacity(100%);}
     to {top: 200px;}

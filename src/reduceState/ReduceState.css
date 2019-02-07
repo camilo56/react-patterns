@@ -1,0 +1,7 @@
+.ReduceState{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 1024px;
+    transition: all .2s;
+}
