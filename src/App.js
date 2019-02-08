@@ -11,8 +11,10 @@ import ItemYoutube from "./generalComponents/itemYoutube/ItemYoutube.jsx";
 import TitleAndBody from "./generalComponents/TitleAndBody/TitleAndBody.jsx";
 import BasicSlider from "./basicSlider/BasicSlider.jsx";
 import ReduceState from "./reduceState/ReduceState.jsx";
+import Pagination from "./pagination/Pagination.jsx";
 import Image from "./generalComponents/image/Image";
 import Dots from "./generalComponents/dots/Dots";
+import PaginationOptions from "./generalComponents/paginationOptions/PaginationOptions";
 
 // import logo from './assets/logo.svg';
 // import './App.css';
@@ -50,7 +52,6 @@ class App extends Component {
             <header className="App-header">
             <h1>React Patterns</h1>
             </header>
-                
                 <h2>CompoundComponent</h2>
                     <CompoundComponent onChange={value => console.log("option Selected", value)}>
                         <CompoundComponent.Option value="01">1</CompoundComponent.Option>
@@ -95,6 +96,16 @@ class App extends Component {
                     }
                 </PropGetters>
                 
+                <br/><hr/>
+                <h2>Pagination</h2>
+                <Pagination sizeOptions={5}>
+                    {({getHelpers, Content}) =>
+                        <React.Fragment>
+                            <Content/>
+                            <PaginationOptions {...getHelpers()} showOption={5}/>
+                        </React.Fragment>
+                    }
+                </Pagination>
                 <br/><hr/>
                 
                 <h2>BasicSlider</h2>

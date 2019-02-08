@@ -44,10 +44,12 @@
     margin: 0px 2px;
     cursor: pointer;
     border-radius: 50%;
+    transition: all .2s;
     background: #bccef3;
 }
 
 .BasicSlider .dots.selected{
+    transform: scale(1.1);
     background: #596887;
 }
 

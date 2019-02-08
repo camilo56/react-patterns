@@ -1,0 +1,14 @@
+.Pagination{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.Pagination .content{
+    width: 100%;
+    min-height: 200px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #cac7c7;
+}
