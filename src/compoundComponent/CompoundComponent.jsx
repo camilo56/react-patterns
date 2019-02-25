@@ -2,7 +2,7 @@ import React from 'react';
 import "./CompoundComponent.css"
 
 class CompoundComponent extends React.Component{
-    static Option = props => <button onMouseDown={e => props.optionSelected(props)}>{props.children}</button> 
+    static Option = props => <button onClick={e => {console.log("onMouseDown"); props.optionSelected(props)}}>{props.children}</button> 
     
     state = {};
     
@@ -12,19 +12,19 @@ class CompoundComponent extends React.Component{
     
     hideOptions = () => {
         this.container.classList.remove("showOptions")
-    }
+    };
 
     toggleOptions = event => {
         event.preventDefault();
         event.stopPropagation();
         this.container.classList.toggle("showOptions")
-    }
+    };
     
     optionSelected = ({value, children, onChange}) => {
         if(!value){ value = children }
         
         this.setState({value}, () => onChange(this.state.value))
-    }
+    };
     
     render(){
         let { defaultName = "Select", onChange } = this.props;

@@ -60,7 +60,7 @@ class App extends Component {
                         <CompoundComponent.Option>4</CompoundComponent.Option>
                         <CompoundComponent.Option value="custom" onClick={e => alert("Different Click")}>diferrent</CompoundComponent.Option>
                     </CompoundComponent>
-                    
+
                 <br/><hr/>
 
                 <h2>Flexible CompoundComponent</h2>
